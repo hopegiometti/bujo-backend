@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+Journal.destroy_all
+Page.destroy_all
+Event.destroy_all
+
+#users 
+hope = User.create(name: "Hope")
+
+#journals
+hope_jo = Journal.create(year: 2020, user: hope)
+
+#pages
+hope_jo_jan_log = Page.create(month: "January", layout: "monthy_log", journal: hope_jo)
+
+#events
+meet_up = Event.create(name: "Tech Meetup", date: 7, attended: true, page: hope_jo_jan_log)
+birthday = Event.create(name: "Surprise Bday Party", date: 20, attended: false, page: hope_jo_jan_log)
