@@ -15,6 +15,12 @@ class PagesController < ApplicationController
         render json: @page
     end
 
+    def destroy
+        @page = Page.find(params[:id])
+        @page.destroy
+        render json: { status: 'SUCCESS', message: 'deleted the event', data: @page }
+    end
+
     private
     
     def page_params
