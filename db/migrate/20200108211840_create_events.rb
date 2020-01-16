@@ -5,7 +5,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.integer :date
       t.boolean :attended
       t.references :page, null: false, foreign_key: true
-
+      
       t.timestamps
     end
   end

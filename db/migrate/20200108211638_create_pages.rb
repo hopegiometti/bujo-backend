@@ -4,7 +4,6 @@ class CreatePages < ActiveRecord::Migration[6.0]
       t.string :month
       t.string :layout
       t.references :journal, null: false, foreign_key: true
-
       t.timestamps
     end
   end

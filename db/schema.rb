@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_01_09_192326) do
   create_table "pages", force: :cascade do |t|
     t.string "month"
     t.string "layout"
+    t.integer "month_id"
     t.bigint "journal_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :days
+  resources :months
   resources :events
   resources :pages
   resources :journals
