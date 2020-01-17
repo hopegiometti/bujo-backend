@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_09_192326) do
+ActiveRecord::Schema.define(version: 2020_01_17_164529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(version: 2020_01_09_192326) do
     t.index ["journal_id"], name: "index_pages_on_journal_id"
   end
 
+  create_table "tasks", force: :cascade do |t|
+    t.string "description"
+    t.integer "date"
+    t.boolean "completed"
+    t.bigint "page_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["page_id"], name: "index_tasks_on_page_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -52,4 +62,5 @@ ActiveRecord::Schema.define(version: 2020_01_09_192326) do
   add_foreign_key "events", "pages"
   add_foreign_key "journals", "users"
   add_foreign_key "pages", "journals"
+  add_foreign_key "tasks", "pages"
 end
