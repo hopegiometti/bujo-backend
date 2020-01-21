@@ -10,6 +10,7 @@ Journal.destroy_all
 Page.destroy_all
 Event.destroy_all
 Task.destroy_all
+Item.destroy_all
 
 #users 
 hope = User.create(name: "Hope")
@@ -23,6 +24,7 @@ lily_jo = Journal.create(year: 2020, user: lily)
 hope_jo_jan_log = Page.create(month: "January", layout: "Monthly Log", journal: hope_jo)
 lily_jo_oct_log = Page.create(month: "October", layout: "Monthly Log", journal: lily_jo)
 lily_jo_oct_week_log = Page.create(month: "October", layout: "Weekly Log - Week Three", journal: lily_jo)
+hope_jo_jan_book_list = Page.create(month: "January", layout: "List", journal: hope_jo)
 
 #events
 meet_up = Event.create(name: "Tech Meetup", date: 7, attended: true, page: hope_jo_jan_log)
@@ -32,3 +34,6 @@ interview = Event.create(name: "Job Interview", date: 19, attended: false, page:
 #tasks
 laundry = Task.create(description: "do laungry!", date: 19, completed: false, page: lily_jo_oct_week_log)
 office = Task.create(description: "finish office rewatch", date: 18, completed: false, page: lily_jo_oct_week_log)
+
+#items
+atonement = Item.create(name: "Atonement", description: "my fav book. must read again!", page: hope_jo_jan_book_list)

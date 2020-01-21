@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :items
   resources :tasks
   resources :days
   resources :months
