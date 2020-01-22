@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :streaks
+  resources :habits
   resources :items
   resources :tasks
   resources :days
